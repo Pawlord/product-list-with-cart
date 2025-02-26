@@ -1,0 +1,23 @@
+@use '@src/variables' as v;
+
+.product-item-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #fff;
+    border: 1px solid v.$rose-500;
+    outline: none;
+    border-radius: 20px;
+
+    padding: 10px 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        color: v.$red;
+        border-color: v.$red;
+    }
+}
