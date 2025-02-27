@@ -1,23 +1,58 @@
 @use '@src/variables' as v;
 
+.button {
+    border: 1px solid v.$rose-500;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    width: 160px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
 .product-item-button {
     display: flex;
     align-items: center;
     gap: 10px;
 
     background-color: #fff;
-    border: 1px solid v.$rose-500;
-    outline: none;
-    border-radius: 20px;
-
-    padding: 10px 20px;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: .3s;
 
     &:hover {
         color: v.$red;
         border-color: v.$red;
+    }
+}
+
+.count-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+
+    padding: 10px;
+
+    background-color: v.$red;
+    color: #fff;
+
+    .ico-left-container,
+    .ico-right-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+
+        transition: .3s;
+
+
+
+        &:hover {
+            background-color: #fff;
+            color: v.$red;
+        }
     }
 }

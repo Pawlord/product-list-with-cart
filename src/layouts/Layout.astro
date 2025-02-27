@@ -1,5 +1,6 @@
 ---
-
+// Контекст
+import { ProductsStateProvider } from '../context/ProductsContext';
 ---
 
 <!doctype html>
@@ -22,7 +23,15 @@
 		</style>
 	</head>
 	<body>
-		<slot />
+		<div class="main-container">
+			<main class="products-container">
+				<slot name="products" />
+			</main>
+
+			<aside class="cart-container">
+				<slot name="cart" />
+			</aside>
+		</div>
 
 		<div class="attribution">
 			Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded

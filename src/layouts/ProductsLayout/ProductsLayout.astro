@@ -1,6 +1,9 @@
 ---
+// Data
+import data from './data/data.json';
+
 // Компоненты
-import { ProductCard } from '../../components';
+import Products from '../../components/Products/Products';
 
 // Стили
 import './products-layout.scss';
@@ -9,10 +12,6 @@ import './products-layout.scss';
 <div class="products">
   <h1 class="products-title">Deserts</h1>
   <div class="products-grid-container">
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
+    <Products productsList={data} client:load />
   </div>
 </div>

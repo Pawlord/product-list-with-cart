@@ -1,3 +1,5 @@
+@use './variables' as v;
+
 @font-face {
     font-family: 'RHT-700';
     font-weight: 700;
@@ -21,4 +23,12 @@ html {
     letter-spacing: 1px;
     font-size: 16px;
     line-height: 1.5;
+}
+
+.main-container {
+    padding-block: 50px;
+    display: flex;
+    justify-content: space-around;
+
+    background-color: v.$rose-100;
 }
