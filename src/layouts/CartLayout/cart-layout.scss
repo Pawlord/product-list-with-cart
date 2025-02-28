@@ -1,0 +1,137 @@
+@use '@src/variables' as v;
+
+.cart {
+    position: sticky;
+    top: 20px;
+
+    align-self: flex-start;
+    width: 450px;
+    font-weight: 600;
+
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 25px;
+
+    &__title {
+        margin-bottom: 30px;
+        font-family: 'RHT-700';
+        color: v.$red;
+    }
+
+    &__item-container {
+        max-height: 400px;
+        padding-inline: 10px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+    }
+
+    &__item {
+        padding-block: 20px;
+        border-bottom: 1px solid #eee;
+
+        &-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .price-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .delete-button-container {
+                border: 2px solid v.$rose-300;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+
+                padding: 2px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                cursor: pointer;
+                transition: .3s;
+
+                svg path {
+                    transition: .3s;
+                }
+
+                &:hover {
+                    border-color: v.$rose-500;
+
+                    svg path {
+                        fill: v.$rose-500;
+                    }
+                }
+            }
+        }
+
+        &-name {
+            color: v.$rose-900;
+        }
+
+        &-count {
+            color: v.$red;
+            font-size: 18px;
+            margin-right: 25px;
+        }
+
+        &-price {
+            color: v.$rose-300;
+        }
+
+        &-total-price {
+            color: v.$rose-500;
+        }
+    }
+
+    &__confirm-order {
+        margin-top: 15px;
+
+        .total-price-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .order-text {
+                color: v.$rose-300;
+            }
+
+            .order-total-price {
+                font-family: 'RHT-700';
+                color: v.$rose-900;
+            }
+        }
+
+        &-delivery {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: v.$rose-100;
+            padding: 20px 40px;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-weight: 500;
+
+            .delivery-text {
+                color: v.$rose-500;
+            }
+
+            .delivery-text span {
+                font-weight: 600;
+                color: v.$rose-900;
+            }
+        }
+    }
+}

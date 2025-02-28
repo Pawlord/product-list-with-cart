@@ -3,7 +3,7 @@
 @font-face {
     font-family: 'RHT-700';
     font-weight: 700;
-    src: url('/assets/fonts/static/RedHatText-SemiBold.ttf') format('truetype');
+    src: url('/assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -31,4 +31,31 @@ html {
     justify-content: space-around;
 
     background-color: v.$rose-100;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 9px;
+    height: 9px;
+    border-radius: 10px;
+    background: lightgrey;
+    border: 1px solid #eee;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: v.$red;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
 }

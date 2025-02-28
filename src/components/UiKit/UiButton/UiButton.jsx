@@ -3,8 +3,7 @@ import clsx from 'clsx';
 // Стили
 import './UiButton.scss';
 
-
-export default function UiButton({ type, text, ico, onClick, onDecrementClick, onIncrementClick }) {
+export default function UiButton({ type, text, ico, onClick, onDecrementClick, onIncrementClick, leftIcon, rightIcon }) {
 
     const btnType = {
         productItem: 'product-item-button',
@@ -16,13 +15,13 @@ export default function UiButton({ type, text, ico, onClick, onDecrementClick, o
         return (
             <button className={clsx(btnType, 'button')}>
                 <span className="ico-left-container" onClick={onDecrementClick}>
-                    -
+                    {leftIcon}
                 </span>
 
                 {text}
 
                 <span className="ico-right-container" onClick={onIncrementClick}>
-                    +
+                    {rightIcon}
                 </span>
             </button>
         )

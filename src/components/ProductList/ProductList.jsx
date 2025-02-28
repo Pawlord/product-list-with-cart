@@ -1,12 +1,15 @@
 // Компоненты
 import ProductCard from "../ProductCard/ProductCard"
+import ProductsLayout from "../../layouts/ProductsLayout/ProductsLayout";
 
 // Контекст
 import { useContext, useMemo } from "react"
 import { ProductsState } from "../../context/ProductsContext"
-import { ProductsStateProvider } from "../../context/ProductsContext";
 
-export default function ProductList({ productsList }) {
+// Данные
+import data from '../../../data/data.json';
+
+export default function ProductList() {
     const { productsCart, addProduct, minusProduct } = useContext(ProductsState);
 
     const handleClick = (product) => {
@@ -32,9 +35,9 @@ export default function ProductList({ productsList }) {
     }, [productsCart]);
 
     return (
-        <>
+        <ProductsLayout>
             {
-                productsList.map((el, i) => {
+                data.map((el, i) => {
                     const count = productCounts[el.name] || 0;
 
                     return (
@@ -53,6 +56,6 @@ export default function ProductList({ productsList }) {
                 }
                 )
             }
-        </>
+        </ProductsLayout>
     )
 }

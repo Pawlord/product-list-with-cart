@@ -48,11 +48,28 @@
 
         transition: .3s;
 
-
-
         &:hover {
             background-color: #fff;
-            color: v.$red;
+
+            svg path {
+                fill: v.$red;
+            }
         }
+    }
+}
+
+.cart-button {
+    width: 100%;
+    padding-block: 20px;
+    border: none;
+    background-color: v.$red;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 18px;
+
+    transition: .3s;
+
+    &:hover {
+        background-color: rgba(v.$red, 0.7);
     }
 }

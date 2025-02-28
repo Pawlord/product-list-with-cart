@@ -5,7 +5,9 @@ import './product-card.scss';
 import UiButton from '../UiKit/UiButton/UiButton';
 
 // Иконки
-import CartIcon from '@public/assets/icon-add-to-cart.svg';
+import CartIcon from '@src/icons/icon-add-to-cart.svg';
+import MinusIcon from '../../icons/MinusIcon';
+import PlusIcon from '../../icons/PlusIcon';
 
 // Функции
 import { formatCurrency } from '../../lib/formatCurrency';
@@ -29,6 +31,8 @@ function ProductCard({ imgUrl, name, desc, price, handleClick, count, onDecremen
                             onClick={handleClick}
                             onDecrementClick={onDecrementClick}
                             onIncrementClick={onIncrementClick}
+                            leftIcon={<MinusIcon />}
+                            rightIcon={<PlusIcon />}
                         />
                         : <UiButton
                             type={'productItem'}

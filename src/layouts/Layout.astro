@@ -1,6 +1,5 @@
 ---
-// Контекст
-import { ProductsStateProvider } from '../context/ProductsContext';
+
 ---
 
 <!doctype html>
@@ -16,6 +15,7 @@ import { ProductsStateProvider } from '../context/ProductsContext';
 			.attribution {
 				font-size: 16px;
 				text-align: center;
+				background-color: hsl(13, 31%, 94%);
 			}
 			.attribution a {
 				color: hsl(228, 45%, 44%);
@@ -24,13 +24,7 @@ import { ProductsStateProvider } from '../context/ProductsContext';
 	</head>
 	<body>
 		<div class="main-container">
-			<main class="products-container">
-				<slot name="products" />
-			</main>
-
-			<aside class="cart-container">
-				<slot name="cart" />
-			</aside>
+			<slot />
 		</div>
 
 		<div class="attribution">

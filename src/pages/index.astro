@@ -1,11 +1,9 @@
 ---
 // Компоненты
 import Layout from '../layouts/Layout.astro';
-import ProductsLayout from '../layouts/ProductsLayout/ProductsLayout.astro';
-import EmptyCart from '../components/EmptyCart/EmptyCart.astro';
+import Main from '../components/Main/Main';
 ---
 
 <Layout>
-  <ProductsLayout slot="products" />
-  <EmptyCart slot="cart" />
+  <Main client:load />
 </Layout>

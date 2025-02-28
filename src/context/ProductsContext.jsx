@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useMemo } from "react";
 
 export const ProductsState = createContext();
 
@@ -10,12 +10,10 @@ export const ProductsStateProvider = ({ children }) => {
             const findProduct = prevProductsCart.find(el => el.name === product.name);
 
             if (findProduct) {
-                // Если продукт уже есть, обновите его количество.
                 return prevProductsCart.map(el =>
                     el.name === product.name ? { ...el, count: el.count + 1 } : el
                 );
             } else {
-                // Если продукта нет, добавьте его с количеством 1.
                 return [...prevProductsCart, { ...product, count: 1 }];
             }
         });
@@ -26,18 +24,36 @@ export const ProductsStateProvider = ({ children }) => {
             const findProduct = prevProductsCart.find(el => el.name === product.name);
 
             if (findProduct) {
-                // Если продукт уже есть, обновите его количество.
-                return prevProductsCart.map(el =>
-                    el.name === product.name ? { ...el, count: el.count - 1 } : el
-                );
+                const updatedCart = prevProductsCart.map(el => {
+                    if (el.name === product.name) {
+                        const newCount = el.count - 1;
+                        return { ...el, count: newCount }
+                    }
+                    return el;
+                }).filter(item => item.count !== 0);
+                return updatedCart;
             }
+
+            return prevProductsCart;
         });
     }
+
+    const cartSummary = useMemo(() => {
+        return productsCart.reduce(
+            (acc, item) => {
+                acc.totalPrice += item.count * item.price;
+                acc.totalCount += item.count;
+                return acc;
+            },
+            { totalPrice: 0, totalCount: 0 }
+        );
+    }, [productsCart]);
 
     const value = {
         productsCart,
         addProduct,
         minusProduct,
+        ...cartSummary,
     }
 
     return (
