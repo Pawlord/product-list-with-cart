@@ -1,0 +1,64 @@
+@use '@src/variables' as v;
+
+.cart-item {
+    padding-block: 20px;
+    border-bottom: 1px solid lightgray;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .price-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .delete-button-container {
+            border: 2px solid v.$rose-300;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+
+            padding: 2px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+            transition: .3s;
+
+            svg path {
+                transition: .3s;
+            }
+
+            &:hover {
+                border-color: v.$rose-500;
+
+                svg path {
+                    fill: v.$rose-500;
+                }
+            }
+        }
+    }
+
+    .cart-item__name {
+        color: v.$rose-900;
+    }
+
+    .cart-item__count {
+        color: v.$red;
+        font-size: 18px;
+        margin-right: 25px;
+    }
+
+    .cart-item__price {
+        color: v.$rose-300;
+    }
+
+    .cart-item__total-price {
+        color: v.$rose-500;
+    }
+}

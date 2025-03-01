@@ -30,69 +30,6 @@
         }
     }
 
-    &__item {
-        padding-block: 20px;
-        border-bottom: 1px solid #eee;
-
-        &-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .price-info {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .delete-button-container {
-                border: 2px solid v.$rose-300;
-                border-radius: 50%;
-                width: 15px;
-                height: 15px;
-
-                padding: 2px;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                cursor: pointer;
-                transition: .3s;
-
-                svg path {
-                    transition: .3s;
-                }
-
-                &:hover {
-                    border-color: v.$rose-500;
-
-                    svg path {
-                        fill: v.$rose-500;
-                    }
-                }
-            }
-        }
-
-        &-name {
-            color: v.$rose-900;
-        }
-
-        &-count {
-            color: v.$red;
-            font-size: 18px;
-            margin-right: 25px;
-        }
-
-        &-price {
-            color: v.$rose-300;
-        }
-
-        &-total-price {
-            color: v.$rose-500;
-        }
-    }
-
     &__confirm-order {
         margin-top: 15px;
 

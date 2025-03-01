@@ -12,8 +12,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            box-sizing: border-box;
 
             border-radius: 15px;
+        }
+
+        .product-item__selected-img {
+            border: 3px solid v.$red;
         }
 
         .product-item__btn-container {

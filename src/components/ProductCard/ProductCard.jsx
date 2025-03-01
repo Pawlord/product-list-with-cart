@@ -12,6 +12,7 @@ import PlusIcon from '../../icons/PlusIcon';
 // Функции
 import { formatCurrency } from '../../lib/formatCurrency';
 import React from 'react';
+import clsx from 'clsx';
 
 function ProductCard({ imgUrl, name, desc, price, handleClick, count, onDecrementClick, onIncrementClick }) {
 
@@ -21,7 +22,7 @@ function ProductCard({ imgUrl, name, desc, price, handleClick, count, onDecremen
         <section className='product-item'>
 
             <div className="product-item__img-container">
-                <img className='product-item__img' src={imgUrl} alt='Десерт' />
+                <img className={clsx('product-item__img', count > 0 && 'product-item__selected-img')} src={imgUrl} alt='Десерт' />
 
                 <div className="product-item__btn-container">
                     {count > 0

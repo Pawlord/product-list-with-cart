@@ -17,9 +17,54 @@
     background-color: rgba(#000, 0.5);
     backdrop-filter: blur(5px);
 
+    font-weight: 600;
+
     .modal {
         width: 600px;
         padding: 30px 50px;
         background-color: #fff;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        border-radius: 25px;
+
+        &__cart-info-container {
+            background-color: v.$rose-100;
+            border-radius: 25px;
+            padding: 20px 30px;
+
+            .cart-items-container {
+                max-height: 400px;
+                overflow: auto;
+
+                padding-right: 15px;
+            }
+        }
+
+        &__title {
+            font-family: "RHT-700";
+            color: v.$rose-900;
+            font-size: 3rem;
+        }
+
+        &__subtitle {
+            font-weight: 600;
+            color: v.$rose-500;
+            margin-top: -20px;
+        }
+
+        .order-total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            font-weight: 500;
+            color: v.$rose-900;
+            margin-top: 15px;
+        }
     }
 }

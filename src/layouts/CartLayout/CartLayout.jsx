@@ -7,12 +7,13 @@ import Delivery from '../../icons/icon-carbon-neutral.svg'
 // Компоненты
 import UiButton from '../../components/UiKit/UiButton/UiButton';
 
-export default function CartLayout({ totalCount, cartItem, totalPrice, handleClick }) {
+export default function CartLayout({ totalCount, cartItem, totalPrice, handleClick, scrollRef }) {
+
     return (
         <div className="cart">
             <h2 className="cart__title">Your Cart ({totalCount})</h2>
 
-            <div className="cart__item-container">
+            <div className="cart__item-container" ref={scrollRef}>
                 {cartItem}
             </div>
 

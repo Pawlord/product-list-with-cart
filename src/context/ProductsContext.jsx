@@ -38,6 +38,8 @@ export const ProductsStateProvider = ({ children }) => {
         });
     }
 
+    const clearProductsCart = () => setProductsCart([]);
+
     const cartSummary = useMemo(() => {
         return productsCart.reduce(
             (acc, item) => {
@@ -53,6 +55,7 @@ export const ProductsStateProvider = ({ children }) => {
         productsCart,
         addProduct,
         minusProduct,
+        clearProductsCart,
         ...cartSummary,
     }
 

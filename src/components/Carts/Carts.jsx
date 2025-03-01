@@ -4,7 +4,7 @@ import CartLayout from "../../layouts/CartLayout/CartLayout";
 import CartItem from "../CartItem/CartItem";
 
 // Контекст
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ProductsState } from "../../context/ProductsContext";
 
 // Функции
@@ -12,6 +12,17 @@ import { formatCurrency } from "../../lib/formatCurrency";
 
 export default function Carts({ setIsOpen }) {
     const { productsCart, totalPrice, totalCount } = useContext(ProductsState)
+
+    const scrollItemRef = useRef(null);
+
+    useEffect(() => {
+        if (scrollItemRef.current) {
+            scrollItemRef.current.scrollTo({
+                top: scrollItemRef.current.scrollHeight,
+                behavior: 'smooth',
+            });
+        }
+    }, [productsCart])
 
     if (!totalPrice) {
         return <EmptyCart />
@@ -37,6 +48,7 @@ export default function Carts({ setIsOpen }) {
             totalPrice={formatCurrency(totalPrice)}
             totalCount={totalCount}
             handleClick={handleModalOpen}
+            scrollRef={scrollItemRef}
         />
     )
 }
