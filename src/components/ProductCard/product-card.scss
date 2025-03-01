@@ -42,4 +42,10 @@
         color: v.$red;
         font-weight: 700;
     }
+
+    .product-item__info {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
 }

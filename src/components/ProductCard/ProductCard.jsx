@@ -45,9 +45,11 @@ function ProductCard({ imgUrl, name, desc, price, handleClick, count, onDecremen
                 </div>
             </div>
 
-            <span className="product-item__name">{name}</span>
-            <p className="product-item__desc">{desc}</p>
-            <span className="product-item__price">{formatPrice}</span>
+            <div className="product-item__info">
+                <span className="product-item__name">{name}</span>
+                <p className="product-item__desc">{desc}</p>
+                <span className="product-item__price">{formatPrice}</span>
+            </div>
         </section>
     )
 }
