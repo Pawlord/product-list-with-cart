@@ -1,19 +1,28 @@
 // Стили
 import './cart-layout.scss';
 
+// Анимация
+import { motion } from 'framer-motion';
+
 // Иконка
 import Delivery from '../../icons/icon-carbon-neutral.svg'
 
 // Компоненты
 import UiButton from '../../components/UiKit/UiButton/UiButton';
 
+// React
+import { useState, useEffect } from 'react';
+
 export default function CartLayout({ totalCount, cartItem, totalPrice, handleClick, scrollRef }) {
 
     return (
-        <div className="cart">
+        <div className="cart" animate={{ height: 'auto' }}>
             <h2 className="cart__title">Your Cart ({totalCount})</h2>
 
-            <div className="cart__item-container" ref={scrollRef}>
+            <div
+                className="cart__item-container"
+                ref={scrollRef}
+            >
                 {cartItem}
             </div>
 

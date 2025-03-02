@@ -7,7 +7,7 @@ import './cart-item.scss';
 // Анимации
 import { motion } from "framer-motion";
 
-export default function CartItem({ type = 'cart', productName, productImage, count, price, totalPrice }) {
+export default function CartItem({ type = 'cart', productName, productImage, count, price, totalPrice, onDeleteHandler }) {
 
     if (type === 'modal') {
         return (
@@ -39,8 +39,9 @@ export default function CartItem({ type = 'cart', productName, productImage, cou
     return (
         <motion.div
             className="cart-item"
-            initial={{ x: -50 }}
-            animate={{ x: 0 }}
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -350, opacity: 0 }}
         >
             <p className='cart-item__name'>{productName}</p>
             <div className="cart-item__info">
@@ -49,7 +50,7 @@ export default function CartItem({ type = 'cart', productName, productImage, cou
                     <span className="cart-item__price">@{price}</span>
                     <span className="cart-item__total-price">{totalPrice}</span>
                 </div>
-                <div className='delete-button-container'>
+                <div className='delete-button-container' onClick={onDeleteHandler}>
                     <CrossIcon />
                 </div>
             </div>

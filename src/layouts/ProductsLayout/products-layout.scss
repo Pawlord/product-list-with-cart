@@ -1,13 +1,23 @@
 .products-container {
-    &-title {
+    width: 60%;
+
+    .products-title {
         margin-bottom: 15px;
     }
 
     .products-grid-container {
         display: grid;
-        grid-template-columns: repeat(3, 320px);
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-template-rows: auto;
         gap: 30px 25px;
     }
 
+}
+
+
+@media(max-width: 730px) {
+    .products-container {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
 }
